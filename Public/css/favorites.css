@@ -54,6 +54,7 @@
 
 .favoritesMenuItemContainer ul {
   width: 100%;
+  padding: 0px;
 }
 
 .favoritesMenuItemContainer li {

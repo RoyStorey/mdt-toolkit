@@ -1,0 +1,30 @@
+body {
+  background-color: black;
+  margin: 0px;
+  overflow-x: hidden;
+}
+
+.cursorPointer {
+  position: relative;
+  border-radius: 40%;
+  background-color: rgb(197, 197, 197);
+  z-index: 100;
+  opacity: .4;
+  width: 2vh;
+  height: 2vh;
+}
+
+body:not(:hover)>.cursorPointer {
+  opacity: 0;
+  transition-property: opacity;
+  transition-delay: .5s;
+  transition-duration: 1s;
+}
+
+.mousedown {
+  width: 2vh;
+  height: 2vh;
+  border-radius: 100%;
+}
+
+.mouseup {}

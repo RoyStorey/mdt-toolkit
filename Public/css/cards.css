@@ -130,7 +130,7 @@
   background-color: rgb(101, 218, 154);
   outline: 1px solid rgb(146, 207, 174);
   border-radius: 5%;
-  padding: 2%;
+  padding: 2% 4%;
   font-weight: 400;
   white-space: nowrap;
 }
