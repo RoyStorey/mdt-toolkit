@@ -6,11 +6,16 @@
     --blackGray: rgba(0, 0, 0, 0.9);
     --poopcock: #462500b4;
     --boxShadowColor: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    --prettyButtonColor: rgba(66, 66, 66, .08);
+    --prettyButtonHover: rgba(66, 66, 66, .1);
+    --prettyButtonActive: rgba(66, 66, 66, .15);
+    --textWhite: rgba(255, 255, 255, 0.9);
 }
 
 body {
     background-color: rgb(255, 255, 255);
     margin: 0px;
+    overflow-x: hidden;
 }
 
 * {

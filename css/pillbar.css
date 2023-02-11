@@ -1,0 +1,36 @@
+/* pill bar  */
+.tag-pill-container {
+  width: 60vw;
+  height: 10vh;
+}
+
+.pill-bar {
+  height: 100%;
+  overflow-x: auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.pill-tag {
+  min-height: 25px;
+  min-width: fit-content;
+  background-color: rgba(66, 66, 66, 0.06);
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 5px;
+  font-weight: 350;
+  user-select: none;
+
+}
+
+.pill-tag:hover {
+  background-color: rgba(66, 66, 66, 0.1);
+}
+
+.pill-tag:active {
+  background-color: rgba(66, 66, 66, 0.2);
+}

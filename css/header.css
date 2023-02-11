@@ -7,25 +7,28 @@
     justify-content: center;
     align-items: center;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: white;
+    z-index: 2;
 }
 
 .logoSpot {
     position: absolute;
     left: 2rem;
 }
-#favorites-button{
+
+#favorites-button {
     font-size: x-large;
     border: none;
     position: absolute;
-    right:3rem;
-    background-color:rgba(0, 0, 0, 0.0);
+    right: 3rem;
+    background-color: rgba(0, 0, 0, 0.0);
     border-radius: 10px;
 }
 
-#favorites-button:hover{
-    background-color: rgba(66,66,66,0.1);
+#favorites-button:hover {
+    background-color: rgba(66, 66, 66, 0.1);
 }
-#favorites-button:active{
-    background-color: rgba(66,66,66,0.4);
+
+#favorites-button:active {
+    background-color: rgba(66, 66, 66, 0.4);
 }

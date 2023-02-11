@@ -1,0 +1,32 @@
+.favorites {
+  position: absolute;
+  right: -25%;
+  top: 0%;
+  width: 25%;
+  height: 100vh;
+  background-color: white;
+  z-index: 3;
+  box-shadow: var(--boxShadowColor);
+}
+
+.favoritesHeader {
+  min-height: calc(8% - 2rem);
+  /* background-color: aquamarine; */
+  width: 100%;
+  box-shadow: var(--boxShadowColor);
+  position: relative;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.favoritesHeader button {
+  all: unset;
+  cursor: pointer;
+  border-radius: 10%;
+  padding: .6rem;
+}
+
+.favoritesHeader button:hover {
+  background-color: var(--prettyButtonHover)
+}

@@ -19,6 +19,7 @@ input {
   position: relative;
   all: unset;
   font: 30px;
+  font-weight: 400;
   color: var(--darkGray);
   height: 100%;
   width: 100%;

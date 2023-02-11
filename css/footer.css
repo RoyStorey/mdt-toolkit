@@ -1,9 +1,6 @@
 footer {
   background-color: rgb(0, 0, 0, .03);
   height: 4vh;
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
   width: 100%;
   box-shadow: var(--boxShadowColor);
   display: flex;

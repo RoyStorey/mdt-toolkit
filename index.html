@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="/css/gallery.css">
     <link rel="stylesheet" href="/css/searchbar.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/pillbar.css">
+    <link rel="stylesheet" href="/css/cards.css">
+    <link rel="stylesheet" href="/css/favorites.css">
     <script src="https://kit.fontawesome.com/0b1a5384ce.js" crossorigin="anonymous"></script>
 </head>
 
@@ -34,12 +37,20 @@
                 </form>
             </div>
         </div>
-        <button id='favorites-button'>
+        <button id='favorites-button' onclick="favoritesBarActive()">
             <i id='header-favorites' class="fa-regular fa-heart"></i>
         </button>
 
     </header>
 
+    <div class="favorites" id="favoritesBar">
+        <div class="favoritesHeader">
+            <button id="favorites-close" onclick="favoritesBarClosed()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+    </div>
     <div class="galBodyContainer">
         <div class="tag-pill-container">
             <span class="pill-bar">
@@ -49,28 +60,39 @@
         <div class="galleryComponentHolder">
             <card class="cardComponent">
                 <img src="/images/midwest.jpg">
+                <h2 class="siteTitle">Something awesome</h2>
                 <div class="contentContainer">
                     <content>
                         <div class="bottomOfContent">
                             <button>Visit website</button>
+                            <div class="tagContainer">
+                                <p>#ML</p>
+                                <p>#AI</p>
+                                <p>#MIT</p>
+                            </div>
                         </div>
                         <div class="descriptionContainer">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident eos quas aut corrupti
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident eos quas aut
+                                corrupti
                                 expedita quos distinctio</p>
                         </div>
                         <div class="breakLine"></div>
                         <h2>Something awesome</h2>
+                        <button id='heartButton'>
+                            <i id='header-favorites' class="fa-regular fa-heart"></i>
+                        </button>
                     </content>
                 </div>
             </card>
         </div>
     </div>
+
     <footer>
         <p>All rights reserved 2023</p>
         <p>Designed by Roy Dewey Storey</p>
     </footer>
 
+    <script src="/js/favorites.js"></script>
 </body>
-<script src="/mousePointer.js"></script>
 
 </html>
