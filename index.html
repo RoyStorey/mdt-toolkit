@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earl Kit</title>
+    <title>Earlkit</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/body.css">
@@ -15,7 +15,13 @@
     <link rel="stylesheet" href="/css/pillbar.css">
     <link rel="stylesheet" href="/css/cards.css">
     <link rel="stylesheet" href="/css/favorites.css">
+    <script type="text/babel" src="/js/gallery.js"></script>
+    <script type="module" src="/dist/sql-wasm.js"></script>
+    <script src="/js/sqlite.js"></script>
     <script src="https://kit.fontawesome.com/0b1a5384ce.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 
 <body>
@@ -79,119 +85,7 @@
             <button>Clear Favorites</button>
         </div>
     </div>
-    <div class="galBodyContainer">
-        <div class="tag-pill-container">
-            <span class="pill-bar">
-                <a class="pill-tag">test-tag</a>
-            </span>
-        </div>
-        <div class="galleryComponentHolder">
-            <card class="cardComponent">
-                <img src="/images/midwest.jpg">
-                <h2 class="siteTitle">Something awesome</h2>
-                <div class="contentContainer">
-                    <content>
-                        <div class="bottomOfContent">
-                            <button>Visit website</button>
-                            <div class="tagContainer">
-                                <p>#ML</p>
-                                <p>#AI</p>
-                                <p>#MIT</p>
-                            </div>
-                        </div>
-                        <div class="descriptionContainer">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident eos quas aut
-                                corrupti
-                                expedita quos distinctio</p>
-                        </div>
-                        <div class="breakLine"></div>
-                        <h2>Something awesome</h2>
-                        <button id='heartButton'>
-                            <i id='header-favorites' class="fa-regular fa-heart"></i>
-                        </button>
-                    </content>
-                </div>
-            </card>
-            <card class="cardComponent">
-                <img src="/images/midwest.jpg">
-                <h2 class="siteTitle">Something awesome</h2>
-                <div class="contentContainer">
-                    <content>
-                        <div class="bottomOfContent">
-                            <button>Visit website</button>
-                            <div class="tagContainer">
-                                <p>#ML</p>
-                                <p>#AI</p>
-                                <p>#MIT</p>
-                            </div>
-                        </div>
-                        <div class="descriptionContainer">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident eos quas aut
-                                corrupti
-                                expedita quos distinctio</p>
-                        </div>
-                        <div class="breakLine"></div>
-                        <h2>Something awesome</h2>
-                        <button id='heartButton'>
-                            <i id='header-favorites' class="fa-regular fa-heart"></i>
-                        </button>
-                    </content>
-                </div>
-            </card>
-            <card class="cardComponent">
-                <img src="/images/midwest.jpg">
-                <h2 class="siteTitle">Something awesome</h2>
-                <div class="contentContainer">
-                    <content>
-                        <div class="bottomOfContent">
-                            <button>Visit website</button>
-                            <div class="tagContainer">
-                                <p>#ML</p>
-                                <p>#AI</p>
-                                <p>#MIT</p>
-                            </div>
-                        </div>
-                        <div class="descriptionContainer">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident eos quas aut
-                                corrupti
-                                expedita quos distinctio</p>
-                        </div>
-                        <div class="breakLine"></div>
-                        <h2>Something awesome</h2>
-                        <button id='heartButton'>
-                            <i id='header-favorites' class="fa-regular fa-heart"></i>
-                        </button>
-                    </content>
-                </div>
-            </card>
-            <card class="cardComponent">
-                <img src="/images/midwest.jpg">
-                <h2 class="siteTitle">Something awesome</h2>
-                <div class="contentContainer">
-                    <content>
-                        <div class="bottomOfContent">
-                            <button>Visit website</button>
-                            <div class="tagContainer">
-                                <p>#ML</p>
-                                <p>#AI</p>
-                                <p>#MIT</p>
-                            </div>
-                        </div>
-                        <div class="descriptionContainer">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident eos quas aut
-                                corrupti
-                                expedita quos distinctio</p>
-                        </div>
-                        <div class="breakLine"></div>
-                        <h2>Something awesome</h2>
-                        <button id='heartButton'>
-                            <i id='header-favorites' class="fa-regular fa-heart"></i>
-                        </button>
-                    </content>
-                </div>
-            </card>
-        </div>
-    </div>
+    <div id="gallery"></div>
 
     <footer>
         <p>All rights reserved 2023</p>
@@ -199,6 +93,8 @@
     </footer>
 
     <script src="/js/favorites.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 </body>
 
 </html>
