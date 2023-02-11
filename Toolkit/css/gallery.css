@@ -1,0 +1,88 @@
+body {
+    background-color: rgb(17, 17, 17);
+}
+
+.galBodyContainer {
+    padding-top: 8vh;
+    /* height:92vh; */
+    display: flex;
+    /* align-items:center; */
+    padding: 12vh 20% 0px 20%;
+}
+
+.galleryComponentHolder {
+    width: 100%;
+    /* height:100%; */
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.thisIsAGalleryComponent {
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex: 1 0 26%;
+    height: 30vh;
+    max-width: 32%;
+    flex-direction: column;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 10px black;
+}
+
+.thisIsAGalleryComponent img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    border-radius: inherit;
+    /* border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px; */
+}
+
+.thisIsAGalleryComponent:not(:hover)>img {
+    height: 100%;
+    transition-duration: .7s;
+}
+
+.thisIsAGalleryComponent:hover>img {
+    height: 0px;
+    transition-duration: .7s;
+}
+
+.thisIsAGalleryComponent:not(:hover)>.galleryComponentName {
+    height: 0%;
+    transition-duration: .7s;
+    /* display: none */
+}
+
+.thisIsAGalleryComponent:hover>.galleryComponentName {
+    height: 100%;
+    border-radius: 1rem;
+    transition-duration: .7s;
+    display: flex;
+    align-items: flex-start;
+}
+
+.thisIsAGalleryComponent:hover>.galleryComponentName h5 {
+    color: white;
+    transition-duration: .5s;
+}
+
+
+.galleryComponentName {
+    background-color: var(--poopcock);
+    height: 0%;
+    width: 100%;
+    border-radius: inherit;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    /* display: none; */
+}
+
+.galleryComponentName h5 {
+    color: transparent
+}

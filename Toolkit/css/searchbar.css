@@ -1,0 +1,56 @@
+.searchcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.searchbar form {
+  background-color: rgb(66, 66, 66);
+  height: 40px;
+  width: 290px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+input {
+  position: relative;
+  all: unset;
+  font: 30px;
+  color: white;
+  height: 100%;
+  width: 100%;
+  padding: 6px 10px;
+}
+
+form button {
+  position: relative;
+  all: inherit;
+  cursor: pointer;
+  width: 50px;
+  height: 100%;
+  border-radius: 5px;
+}
+
+svg {
+  fill: white;
+  padding: 10px;
+  border: solid rgb(66, 66, 66);
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+::placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+svg:hover {
+  background-color: grey;
+}
+
+svg:active {
+  box-shadow: inset 0px 0px 5px rgb(66, 66, 66);
+}
