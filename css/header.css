@@ -4,24 +4,28 @@
     height: 8vh;
     box-shadow: var(--boxShadowColor);
     display: flex;
-    /* justify-content: space-evenly; */
+    justify-content: center;
     align-items: center;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.03);
 }
 
-.iconContainer {
-    display: flex;
-    justify-content: space-between;
-    width: 30%;
-}
-
-.iconContainer h3:hover {
-    color: orange;
-    cursor: pointer;
-}
-
 .logoSpot {
     position: absolute;
     left: 2rem;
+}
+#favorites-button{
+    font-size: x-large;
+    border: none;
+    position: absolute;
+    right:3rem;
+    background-color:rgba(0, 0, 0, 0.0);
+    border-radius: 10px;
+}
+
+#favorites-button:hover{
+    background-color: rgba(66,66,66,0.1);
+}
+#favorites-button:active{
+    background-color: rgba(66,66,66,0.4);
 }
