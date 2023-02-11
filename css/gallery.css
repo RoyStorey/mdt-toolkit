@@ -1,26 +1,29 @@
 .galBodyContainer {
     margin-top: 8vh;
-    height:88vh;
+    height: 88vh;
     /* display:block;     */
     padding: 0vh 20% 0px 20%;
 
 }
+
 /* pill bar  */
-.tag-pill-container{
-    width:60vw;
-    height:10vh;
+.tag-pill-container {
+    width: 60vw;
+    height: 10vh;
 }
-.pill-bar{
-    height:100%;
-    overflow-x:scroll;
-    display:flex;
-    gap:1rem;
-    align-items:center;
+
+.pill-bar {
+    height: 100%;
+    overflow-x: scroll;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
-.pill-tag{
-    min-height:25px;
+
+.pill-tag {
+    min-height: 25px;
     min-width: fit-content;
-    background-color: rgba(66,66,66,0.06);
+    background-color: rgba(66, 66, 66, 0.06);
     padding-top: .5rem;
     padding-bottom: .5rem;
     padding-left: 1rem;
@@ -30,12 +33,15 @@
     user-select: none;
 
 }
-.pill-tag:hover{
-    background-color: rgba(66,66,66,0.1);
+
+.pill-tag:hover {
+    background-color: rgba(66, 66, 66, 0.1);
 }
-.pill-tag:active{
-    background-color: rgba(66,66,66,0.2);
+
+.pill-tag:active {
+    background-color: rgba(66, 66, 66, 0.2);
 }
+
 /* gallery */
 .galleryComponentHolder {
     background-color: aqua;
@@ -56,6 +62,7 @@ card {
     box-shadow: var(--boxShadowColor);
     overflow: hidden;
     position: relative;
+    margin: 0px;
 }
 
 card img {
@@ -75,12 +82,59 @@ card:hover>img {
 
 card .cardTextContainer {
     position: absolute;
-    top: 100%;
-    left: 0%;
+    left: -100%;
+    top: 0px;
+    /* background-color: rgb(34, 34, 34); */
+    height: 100%;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    padding-inline: 2rem;
-    padding-bottom: 4rem;
+}
+
+card:hover>.contentContainer {
+    left: 0%;
+    transition-duration: .5s;
+}
+
+card content {
+    padding: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+card content h2 {
+    margin: inherit;
+    font-weight: 500;
+    color: inherit;
+    padding-bottom: 4%;
+    display: flex;
+}
+
+card .breakLine {
+    height: 1px;
+    background-color: rgb(101, 218, 154);
+    display: flex;
+}
+
+.descriptionContainer {
+    color: inherit;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+
+card .descriptionContainer p {
+    color: inherit;
+    overflow: hidden;
+    display: flex;
+    font-weight: 400;
+}
+
+.bottomOfContent {
+    display: flex;
+    justify-content: left;
     align-items: center;
     transition-duration: 1s;
     max-height: 85%;
