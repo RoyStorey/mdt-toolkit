@@ -8,7 +8,6 @@
 
 .galleryComponentHolder {
     width: 100%;
-    /* height:100%; */
     gap: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -17,13 +16,19 @@
 
 card {
     background-color: rgba(255, 255, 255);
-    height: 30vh;
+    height: 40vh;
+    max-width: 30vh;
     display: flex;
     flex: 1 0 24%;
     border-radius: 2%;
     box-shadow: var(--boxShadowColor);
     overflow: hidden;
     position: relative;
+    margin: 0px;
+}
+
+card:hover {
+    background: linear-gradient(0deg, black, transparent)
 }
 
 card img {
@@ -36,49 +41,68 @@ card img {
     transition-duration: 1s;
 }
 
-card:hover>img {
-    top: -100%;
-    transition-duration: 1s;
-}
-
-card .cardTextContainer {
+.contentContainer {
     position: absolute;
-    top: 100%;
-    left: 0%;
+    /* background-color: rgb(34, 34, 34); */
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    padding-inline: 2rem;
-    padding-bottom: 4rem;
-    align-items: center;
-    transition-duration: 1s;
-    max-height: 85%;
 }
 
-card:hover>.cardTextContainer {
-    top: 0%;
-    transition-duration: 1s;
-}
-
-card .cardTextContainer p {
-    overflow-y: scroll;
-    margin-top: 0px;
-}
-
-card .cardTagContainer {
-    background: linear-gradient(45deg, rgb(212, 255, 255), rgb(217, 255, 242));
-    position: absolute;
-    bottom: 5%;
+card content {
+    padding: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column-reverse;
     width: 100%;
-    height: 18%;
-    border-block: 1px solid var(--gray);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+card content h2 {
+    margin: inherit;
+    font-weight: 500;
+    color: inherit;
+    padding-bottom: 4%;
     display: flex;
-    flex-direction: row;
+}
+
+card .breakLine {
+    height: 1px;
+    background-color: rgb(101, 218, 154);
+    display: flex;
+}
+
+.descriptionContainer {
+    color: inherit;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+
+card .descriptionContainer p {
+    color: inherit;
+    overflow: hidden;
+    display: flex;
+    font-weight: 400;
+}
+
+.bottomOfContent {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.bottomOfContent button {
+    all: unset;
+    display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-}
-
-card .cardTagContainer p {
-    overflow-y: hidden;
-    margin: 0px;
+    cursor: pointer;
+    text-transform: capitalize;
+    color: black;
+    background-color: rgb(101, 218, 154);
+    outline: 1px solid rgb(146, 207, 174);
+    border-radius: 5%;
+    padding: 2%;
+    font-weight: 400;
 }
