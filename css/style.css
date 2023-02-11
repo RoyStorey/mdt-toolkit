@@ -8,8 +8,9 @@
     --boxShadowColor: 1px 1px 10px rgba(0, 0, 0, 0.3);
     --prettyButtonColor: rgba(66, 66, 66, .08);
     --prettyButtonHover: rgba(66, 66, 66, .1);
-    --prettyButtonActive: rgba(66, 66, 66, .15);
+    --prettyButtonActive: rgba(66, 66, 66, .4);
     --textWhite: rgba(255, 255, 255, 0.9);
+    --themeGreen: rgb(101, 218, 154);
 }
 
 body {

@@ -16,7 +16,7 @@
 .pill-tag {
   min-height: 25px;
   min-width: fit-content;
-  background-color: rgba(66, 66, 66, 0.06);
+  background-color: var(--prettyButtonColor);
   padding-top: .5rem;
   padding-bottom: .5rem;
   padding-left: 1rem;
@@ -28,9 +28,9 @@
 }
 
 .pill-tag:hover {
-  background-color: rgba(66, 66, 66, 0.1);
+  background-color: var(--prettyButtonHover)
 }
 
 .pill-tag:active {
-  background-color: rgba(66, 66, 66, 0.2);
+  background-color: var(--prettyButtonActive);
 }

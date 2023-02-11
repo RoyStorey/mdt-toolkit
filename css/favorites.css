@@ -1,5 +1,5 @@
 .favorites {
-  position: absolute;
+  position: fixed;
   right: -25%;
   top: 0%;
   width: 25%;
@@ -7,17 +7,24 @@
   background-color: white;
   z-index: 3;
   box-shadow: var(--boxShadowColor);
+  transition-duration: .5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .favoritesHeader {
-  min-height: calc(8% - 2rem);
-  /* background-color: aquamarine; */
-  width: 100%;
-  box-shadow: var(--boxShadowColor);
+  border-bottom: 1px solid var(--whiteGray);
   position: relative;
   padding: 1rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.favoritesHeader h1 {
+  font-weight: 550;
+  color: var(--darkGray);
 }
 
 .favoritesHeader button {
@@ -25,8 +32,82 @@
   cursor: pointer;
   border-radius: 10%;
   padding: .6rem;
+  background-color: var(--prettyButtonColor);
 }
 
 .favoritesHeader button:hover {
+  background-color: var(--prettyButtonHover);
+}
+
+.favoritesHeader button:active {
+  background-color: var(--prettyButtonActive)
+}
+
+.favoritesMenuItemContainer {
+  height: auto;
+  /* background-color: beige; */
+  border-bottom: 1px solid var(--whiteGray);
+  display: flex;
+  justify-content: right;
+  padding: 1rem;
+}
+
+.favoritesMenuItemContainer ul {
+  width: 100%;
+}
+
+.favoritesMenuItemContainer li {
+  list-style-type: none;
+  border-top: 1px solid var(--whiteGray);
+}
+
+.favoritesMenuItemContainer li:first-child {
+  border: none;
+}
+
+.favoritesMenuItemContainer p {
+  text-align: right;
+  color: black;
+  font-size: 1.5rem;
+}
+
+.menuItem {
+  /* background-color: orangered; */
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 2rem;
+}
+
+.menuItem:hover {
   background-color: var(--prettyButtonHover)
+}
+
+.menuItem button {
+  all: unset;
+  cursor: pointer;
+}
+
+.menuItem button i {
+  font-size: x-large;
+}
+
+.favoritesFooter {
+  display: flex;
+  height: 8%;
+  border-top: 1px solid var(--whiteGray);
+  justify-content: space-between;
+  padding: 0rem 1rem;
+  align-items: center;
+}
+
+.favoritesFooter button {
+  all: unset;
+  cursor: pointer;
+  border: 1px solid var(--lightGray);
+  padding: .5rem;
+}
+
+.favoritesFooter button:hover {
+  background-color: var(--prettyButtonHover);
 }
