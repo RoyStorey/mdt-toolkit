@@ -27,10 +27,6 @@ card {
     margin: 0px;
 }
 
-card:hover {
-    background: linear-gradient(0deg, black, transparent)
-}
-
 card img {
     object-fit: cover;
     width: 100%;
@@ -43,9 +39,17 @@ card img {
 
 .contentContainer {
     position: absolute;
+    left: -100%;
+    top: 0px;
     /* background-color: rgb(34, 34, 34); */
     height: 100%;
+    width: 100%;
     display: flex;
+}
+
+card:hover>.contentContainer {
+    left: 0%;
+    transition-duration: .5s;
 }
 
 card content {
