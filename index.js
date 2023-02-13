@@ -7,7 +7,7 @@ const path = require('path');
 
 // const res = db.exec("SELECT * FROM websites");
 
-const hostname = '127.0.0.1';
+const hostname = '172.16.220.110';
 const port = 3000;
 
 const server = http.createServer((req, res) => {

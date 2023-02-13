@@ -1,0 +1,31 @@
+:root {
+    --whiteGray: rgba(0, 0, 0, 0.1);
+    --lightGray: rgba(0, 0, 0, 0.3);
+    --gray: rgba(0, 0, 0, 0.5);
+    --darkGray: rgba(0, 0, 0, 0.7);
+    --blackGray: rgba(0, 0, 0, 0.9);
+    --poopcock: #462500b4;
+    --boxShadowColor: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    --prettyButtonColor: rgba(66, 66, 66, .08);
+    --prettyButtonHover: rgba(66, 66, 66, .1);
+    --prettyButtonActive: rgba(66, 66, 66, .4);
+    --textWhite: rgba(255, 255, 255, 0.9);
+    --themeGreen: rgb(101, 218, 154);
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    color: var(--darkGray);
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+}
