@@ -89,5 +89,3 @@ fetch('/js/website.csv')
   .then(function (csv) {
     CSVToArray(csv, ',')
   })
-
-console.log(cardTitles)

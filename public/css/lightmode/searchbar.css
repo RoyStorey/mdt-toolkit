@@ -1,0 +1,54 @@
+.searchcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex: 1; */
+}
+
+.searchbar form {
+  background-color: var(--whiteGray);
+  height: 40px;
+  width: 290px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+input {
+  position: relative;
+  all: unset;
+  font: 30px;
+  font-weight: 400;
+  color: var(--darkGray);
+  height: 100%;
+  width: 100%;
+  padding: 6px 10px;
+}
+
+input::placeholder {
+  color: var(--gray);
+}
+
+form button {
+  position: relative;
+  all: inherit;
+  cursor: pointer;
+  width: 50px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+::placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+svg:hover {
+  background-color: grey;
+}
+
+svg:active {
+  box-shadow: var(--boxShadowColor);
+}

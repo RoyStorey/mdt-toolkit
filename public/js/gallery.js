@@ -20,11 +20,11 @@ fetch('/js/website.csv')
       let currentCard = cardDataObjects[i];
 
       cardTitles.push(currentCard[1])
-      console.log(cardTitles)
 
       let formattedCard = (<div class="card cardComponent">
-        <img src={currentCard[4]}></img>
-        <h2 class="siteTitle">{currentCard[1]}</h2>
+        <div class="gradient"></div>
+          <img src={currentCard[4]}></img>
+          <h2 class="siteTitle">{currentCard[1]}</h2>
         <div class="contentContainer">
           <content>
             <div class="bottomOfContent">

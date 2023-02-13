@@ -1,0 +1,37 @@
+.headerContainer {
+    top: 0px;
+    width: 100vw;
+    height: 8vh;
+    box-shadow: var(--boxShadowColor);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    background-color: inherit;
+    z-index: 2;
+}
+
+.topRightIcons{
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+}
+
+#favorites-button {
+    font-size: x-large;
+    border: none;
+    /* position: absolute;
+    right: 3rem; */
+    background-color: rgba(0, 0, 0, 0.0);
+    border-radius: 10px;
+}
+
+#favorites-button:hover {
+    background-color: rgba(66, 66, 66, 0.1);
+}
+
+#favorites-button:active {
+    background-color: rgba(66, 66, 66, 0.4);
+}

@@ -1,0 +1,15 @@
+/* lightmode */
+@import url("lightmode/body.css");
+@import url("lightmode/cards.css");
+@import url("lightmode/favorites.css");
+@import url("lightmode/footer.css");
+@import url("lightmode/gallery.css");
+@import url("lightmode/header.css");
+@import url("lightmode/pillbar.css");
+@import url("lightmode/pointer.css");
+@import url("lightmode/searchbar.css");
+@import url("lightmode/style.css");
+@import url("lightmode/toggleswitch.css");
+
+/* darkmode */
+/* @import url("darkmain.css"); */

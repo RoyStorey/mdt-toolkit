@@ -6,18 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Earlkit</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/body.css">
-    <link rel="stylesheet" href="/css/gallery.css">
-    <link rel="stylesheet" href="/css/searchbar.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/pillbar.css">
-    <link rel="stylesheet" href="/css/cards.css">
-    <link rel="stylesheet" href="/css/favorites.css">
-    <link rel="stylesheet" href="/css/toggleswitch.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/darkmode.css">
     <script type="text/babel" src="/js/gallery.js"></script>
     <script type="text/babel" src="/js/functions.js"></script>
+    <script type="text/babel" src="/js/toggleswitch.js"></script>
     <!-- <script type="module" src="/dist/sql-wasm.js"></script>
     <script src="/js/sqlite.js"></script> -->
     <script src="https://kit.fontawesome.com/0b1a5384ce.js" crossorigin="anonymous"></script>
@@ -40,7 +33,7 @@
             </div>
         </div>
         <div class="topRightIcons">
-            <label class="switch">
+            <label class="switch" id="darkmodeSwitch" onclick="darkModeToggle()">
                 <input type="checkbox">
                 <span class="slider"></span>
             </label>
@@ -91,7 +84,7 @@
 
     <footer>
         <p>All rights reserved 2023</p>
-        <p>Designed by Roy Dewey Storey</p>
+        <p>Designed by R.D. Storey and B. Freeman</p>
     </footer>
 
     <script src="/js/favorites.js"></script>

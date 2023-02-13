@@ -6,8 +6,10 @@ const root = ReactDOM.createRoot(domContainer);
 
 const cardTemplate = (
   <card className="cardComponent">
-    <img src="/images/midwest.jpg"></img>
-    <h2 className="siteTitle">Something awesome</h2>
+    <div class="imageHolder">
+      <img src="/images/midwest.jpg"></img>
+      <h2 className="siteTitle">Something awesome</h2>
+    </div>
     <div className="contentContainer">
       <content>
         <div className="bottomOfContent">
