@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Earlkit</title>
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/darkmode.css">
+    <!-- <link rel="stylesheet" href="/css/darkmode.css"> -->
     <script type="text/babel" src="/js/gallery.js"></script>
-    <script type="text/babel" src="/js/functions.js"></script>
-    <script type="text/babel" src="/js/toggleswitch.js"></script>
-    <!-- <script type="module" src="/dist/sql-wasm.js"></script>
-    <script src="/js/sqlite.js"></script> -->
+    <script type="text/babel" src="/js/footer.js"></script>
+    <script type="text/babel" src="/js/favorites.js"></script>
+    <script type="text/babel" src="/js/header.js"></script>
+    <script src="/js/toggleswitch.js"></script>
     <script src="https://kit.fontawesome.com/0b1a5384ce.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
@@ -21,73 +21,16 @@
 
 <body>
 
-    <header class="headerContainer">
-        <div class="logoSpot">
-            <h1>Earlkit</h1>
-        </div>
-        <div class="searchcontainer">
-            <div class="searchbar">
-                <form autocomplete="off">
-                    <input type="search" id="searchBar" name="querybar" placeholder="Search">
-                </form>
-            </div>
-        </div>
-        <div class="topRightIcons">
-            <label class="switch" id="darkmodeSwitch" onclick="darkModeToggle()">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-            <button id='favorites-button' onclick="favoritesBarActive()">
-                <i id='header-favorites' class="fa-regular fa-heart"></i>
-            </button>
-        </div>
-    </header>
 
-    <div class="favorites" id="favoritesBar">
-        <div>
-            <div class="favoritesHeader">
-                <button id="favorites-close" onclick="favoritesBarClosed()">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-                <h1>Favorites</h1>
-            </div>
-            <div class="favoritesMenuItemContainer">
-                <ul>
-                    <li>
-                        <div class="menuItem">
-                            <button><i class="fa-solid fa-xmark"></i></button>
-                            <p>YouTube</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="menuItem">
-                            <button><i class="fa-solid fa-xmark"></i></button>
-                            <p>Bing</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="menuItem">
-                            <button><i class="fa-solid fa-xmark"></i></button>
-                            <p>ChatGPT</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="favoritesFooter">
-            <button>Export Favorites</button>
-            <button>Import Favorites</button>
-            <button>Clear Favorites</button>
-        </div>
-    </div>
+    <div id="favorites"></div>
+
+    <div id="header"></div>
+
     <div id="gallery"></div>
 
-    <footer>
-        <p>All rights reserved 2023</p>
-        <p>Designed by R.D. Storey and B. Freeman</p>
-    </footer>
+    <div id="footer"></div>
 
-    <script src="/js/favorites.js"></script>
+    <script src="/js/functions.js"></script>
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 </body>

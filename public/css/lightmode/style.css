@@ -11,6 +11,7 @@
     --prettyButtonActive: rgba(66, 66, 66, .4);
     --textWhite: rgba(255, 255, 255, 0.9);
     --themeGreen: rgb(101, 218, 154);
+    --darkmodeGray: rgb(17, 18, 22);
 }
 
 body {
@@ -28,4 +29,8 @@ body {
 a {
     all: unset;
     cursor: pointer;
+}
+
+#favorites, #header, #gallery, #footer{
+    background-color:inherit;
 }

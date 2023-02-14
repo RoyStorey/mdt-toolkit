@@ -24,7 +24,7 @@
 
 .favoritesHeader h1 {
   font-weight: 550;
-  color: var(--darkGray);
+  color: inherit;
 }
 
 .favoritesHeader button {
@@ -68,7 +68,7 @@
 
 .favoritesMenuItemContainer p {
   text-align: right;
-  color: black;
+  color: inherit;
   font-size: 1.5rem;
 }
 

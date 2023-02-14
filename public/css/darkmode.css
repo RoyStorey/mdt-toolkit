@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(26, 26, 26);
+    background-color: rgb(17, 18, 22);
     margin: 0px;
     overflow-x: hidden;
 }
@@ -19,3 +19,29 @@ body {
     flex-direction: row;
     align-items: center;
   }
+.searchbar input{
+    color:white;
+}
+
+input::placeholder {
+    color: var(--textWhite);
+}
+
+.bottomOfContent button {
+background:linear-gradient(90deg, rgb(204, 190, 111), rgb(197, 166, 108));
+outline: 1px solid rgb(207, 191, 146);
+}
+
+.bottomOfContent button:hover {
+background-color: rgb(219, 200, 148);
+outline: 1px solid rgb(207, 202, 177);
+transition-duration: .2s;
+box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.card .breakLine {
+    background:linear-gradient(90deg, rgb(204, 190, 111), rgb(197, 166, 108));
+}
+
+.favorites{
+    background-color:var(--darkmodeGray)
+}

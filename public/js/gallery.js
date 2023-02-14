@@ -1,5 +1,5 @@
-const domContainer = document.getElementById('gallery');
-const root = ReactDOM.createRoot(domContainer);
+const galleryElement = document.getElementById('gallery');
+const galleryRoot = ReactDOM.createRoot(galleryElement);
 
 var csvFile = []
 var cardDataObjects = []
@@ -60,31 +60,5 @@ fetch('/js/website.csv')
       </div>)
 
 
-    root.render(gallery)
+    galleryRoot.render(gallery)
   })
-
-
-// const cardTemplate = (
-//   <div class="card cardComponent">
-//     <img src={currentCard.img}></img>
-//     <h2 class="siteTitle">{currentCard.title}</h2>
-//     <div class="contentContainer">
-//       <content>
-//         <div class="bottomOfContent">
-//           <a href={currentCard.url}><button>Visit website</button></a>
-//           <div class="tagContainer">
-//             <p>{currentCard.tags}</p>
-//           </div>
-//         </div>
-//         <div class="descriptionContainer">
-//           <p>{currentCard.desc}</p>
-//         </div>
-//         <div class="breakLine"></div>
-//         <h2>{currentCard.title}</h2>
-//         <button id='heartButton'>
-//           <i id='header-favorites' class="fa-regular fa-heart"></i>
-//         </button>
-//       </content>
-//     </div>
-//   </div>
-// )

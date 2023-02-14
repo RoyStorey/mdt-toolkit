@@ -1,12 +1,24 @@
-let toggleSwitch = document.getElementById('darkmodeSwitch')
-let isItDarkMode = true;
-const mainCSS = document.querySelector('link[href*="/css/main.css"]')
-var darkmodeCSS = document.querySelector('link[href*="/css/darkmode.css"]')
+// let toggleSwitch = document.getElementById('darkmodeSwitch')
+
+// const mainCSS = document.querySelector('link[href*="/css/main.css"]')
+// var darkmodeCSS = document.querySelector('link[href*="/css/darkmode.css"]')
+
+// chatgpt godly
+// Create a new <link> element
+var darkmodeCSS = document.createElement("link");
+
+// Set the attributes of the <link> element
+darkmodeCSS.rel = "stylesheet";
+darkmodeCSS.type = "text/css";
+darkmodeCSS.href = "/css/darkmode.css";
+
+// Add the <link> element to the <head> of the document
 
 function darkModeToggle(){
-    if(isItDarkMode === true){
-        mainCSS.parentNode.removeChild(darkmodeCSS);
-        isItDarkMode = false;
-        console.log('nut')
+    if(!document.head.contains(darkmodeCSS)){
+        document.head.appendChild(darkmodeCSS);
+    }
+    else{
+        document.head.removeChild(darkmodeCSS);
     }
 }
