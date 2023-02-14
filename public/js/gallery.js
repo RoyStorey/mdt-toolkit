@@ -79,6 +79,7 @@ fetch("/js/website.csv")
         <div class="galleryComponentHolder">{cardGallery}</div>
       </div>
     );
+    // tags end.
 
     galleryRoot.render(gallery);
   });
