@@ -1,13 +1,9 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-// const SQL = require('/Earlkit/node_modules/sqljs/lib/sqljs.js');
-// const data = fs.readFileSync('websites.db');
-// var db = new SQL.Database(data);
+import "bootstrap/dists/css/bootstrap.min.css"
 
-// const res = db.exec("SELECT * FROM websites");
-
-const hostname = '172.16.220.110';
+const hostname = '127.0.0.1';
 const port = 3000;
 
 const server = http.createServer((req, res) => {
