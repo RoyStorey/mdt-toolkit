@@ -148,7 +148,7 @@
 }
 
 .bottomOfContent button:hover {
-  background-color: rgb(148, 219, 180);
+  background-color: rgb(129, 219, 169);
   outline: 1px solid rgb(177, 207, 191);
   transition-duration: .2s;
 }

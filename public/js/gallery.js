@@ -18,7 +18,6 @@ fetch("/js/website.csv")
     // cards
     let cardDataObjects = CSVToArray(csvFile, ",");
     let cardGallery = [];
-    let pills = [];
     for (let i = 0; i < cardDataObjects.length; i++) {
       let currentCard = cardDataObjects[i];
 
@@ -61,20 +60,17 @@ fetch("/js/website.csv")
         }
       }
     }
-    function getUniqueTags(cardUniqueTags) {
-      for (let tag of cardUniqueTags) {
-        console.log(tag);
-        pills.push(tag);
-        return tag;
-      }
+
+    let formattedTags = [];
+    for (let tag in cardUniqueTags) {
+      let formattedTag = <a class="pill-tag">#{cardUniqueTags[tag]}</a>;
+      formattedTags.push(formattedTag);
     }
 
     const gallery = (
       <div class="galBodyContainer">
         <div class="tag-pill-container">
-          <span class="pill-bar">
-            <a class="pill-tag">{getUniqueTags}</a>
-          </span>
+          <span class="pill-bar">{formattedTags}</span>
         </div>
         <div class="galleryComponentHolder">{cardGallery}</div>
       </div>
