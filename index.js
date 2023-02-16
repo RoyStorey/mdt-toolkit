@@ -1,9 +1,9 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-import "bootstrap/dists/css/bootstrap.min.css"
+// const bootstrap = require("bootstrap/dists/css/bootstrap.min.css")
 
-const hostname = '127.0.0.1';
+const hostname = '10.0.0.248';
 const port = 3000;
 
 const server = http.createServer((req, res) => {
@@ -88,3 +88,4 @@ const server = http.createServer((req, res) => {
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
+

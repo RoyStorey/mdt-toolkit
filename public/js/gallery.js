@@ -1,48 +1,38 @@
 const galleryElement = document.getElementById("gallery");
 const galleryRoot = ReactDOM.createRoot(galleryElement);
-
-var csvFile = [];
 var cardDataObjects = [];
 var cardTitles = [];
 var cardUniqueTags = [];
-
-fetch("/js/website.csv")
+fetch("http://10.0.0.248:8000/api/Earlkits/?format=json")
   .then(function (response) {
     return response.text();
   })
   .then(function (csv) {
-    csvFile.push(csv);
-    return csvFile;
-  })
-  .then(function (csvFile) {
-    // cards
-    let cardDataObjects = CSVToArray(csvFile, ",");
+    csv = JSON.parse(csv)
     let cardGallery = [];
-    for (let i = 0; i < cardDataObjects.length; i++) {
-      let currentCard = cardDataObjects[i];
-
-      cardTitles.push(currentCard[1]);
+    var currentCard = csv[0];
+    cardTitles.push(currentCard['title']);
 
       let formattedCard = (
         <div class="card cardComponent">
           <div class="gradient"></div>
-          <img src={currentCard[4]}></img>
-          <h2 class="siteTitle">{currentCard[1]}</h2>
+          <img src={currentCard['img']}></img>
+          <h2 class="siteTitle">{currentCard['title']}</h2>
           <div class="contentContainer">
             <content>
               <div class="bottomOfContent">
-                <a href={currentCard[2]}>
+                <a href={currentCard['url']}>
                   <button>Visit website</button>
                 </a>
                 <div class="tagContainer">
-                  <p>{currentCard[5]}</p>
+                  <p>{currentCard['tags']}</p>
                 </div>
               </div>
               <div class="descriptionContainer">
-                <p>{currentCard[3]}</p>
+                <p>{currentCard['desc']}</p>
               </div>
               <div class="breakLine"></div>
-              <h2>{currentCard[1]}</h2>
+              <h2>{currentCard['title']}</h2>
               <button id="heartButton">
                 <i id="header-favorites" class="fa-regular fa-heart"></i>
               </button>
@@ -53,13 +43,12 @@ fetch("/js/website.csv")
       cardGallery.push(formattedCard);
 
       //tags.
-      let cardTagArray = currentCard[5].split("-");
+      let cardTagArray = currentCard['tags'].split(",");
       for (let j = 0; j < cardTagArray.length; j++) {
         if (!cardUniqueTags.includes(cardTagArray[j])) {
           cardUniqueTags.push(cardTagArray[j]);
         }
       }
-    }
 
     let formattedTags = [];
     for (let tag in cardUniqueTags) {
