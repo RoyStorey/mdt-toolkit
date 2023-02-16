@@ -3,7 +3,7 @@ const galleryRoot = ReactDOM.createRoot(galleryElement);
 var cardDataObjects = [];
 var cardTitles = [];
 var cardUniqueTags = [];
-fetch("http://10.0.0.248:8000/api/Earlkits/?format=json")
+fetch("http://192.168.86.41:8000/api/Earlkits/?format=json")
   .then(function (response) {
     return response.text();
   })
@@ -13,6 +13,13 @@ fetch("http://10.0.0.248:8000/api/Earlkits/?format=json")
     for (let i = 0; i < csv.length; i++){
     var currentCard = csv[i];
     cardTitles.push(currentCard['title']);
+
+    let cardDisplayTags = []
+
+    for(let i = 0; i < currentCard['tags'].split(",").length; i++){
+      let individualTag = <p>#{currentCard['tags'].split(",")[i]}</p>;
+      cardDisplayTags.push(individualTag);
+    }
 
       let formattedCard = (
         <div class="card cardComponent">
@@ -26,7 +33,7 @@ fetch("http://10.0.0.248:8000/api/Earlkits/?format=json")
                   <button>Visit website</button>
                 </a>
                 <div class="tagContainer">
-                  <p>{currentCard['tags']}</p>
+                  {cardDisplayTags}
                 </div>
               </div>
               <div class="descriptionContainer">

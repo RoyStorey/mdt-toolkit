@@ -4,7 +4,7 @@ const footerRoot = ReactDOM.createRoot(footerElement);
 const footer = (
 <footer>
     <p>All rights reserved 2023</p>
-    <p>Designed by R.D. Storey and B. Freeman</p>
+    <a href="/"><p>Designed by R.D. Storey and B. Freeman</p></a>
 </footer>)
   
 footerRoot.render(footer)
