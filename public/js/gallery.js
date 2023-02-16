@@ -10,7 +10,8 @@ fetch("http://10.0.0.248:8000/api/Earlkits/?format=json")
   .then(function (csv) {
     csv = JSON.parse(csv)
     let cardGallery = [];
-    var currentCard = csv[0];
+    for (let i = 0; i < csv.length; i++){
+    var currentCard = csv[i];
     cardTitles.push(currentCard['title']);
 
       let formattedCard = (
@@ -48,7 +49,7 @@ fetch("http://10.0.0.248:8000/api/Earlkits/?format=json")
         if (!cardUniqueTags.includes(cardTagArray[j])) {
           cardUniqueTags.push(cardTagArray[j]);
         }
-      }
+      }}
 
     let formattedTags = [];
     for (let tag in cardUniqueTags) {
