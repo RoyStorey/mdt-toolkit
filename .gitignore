@@ -1,2 +1,4 @@
 node_modules
-backend/db.sqlite3
+index.js
+settings.py
+manage.py

@@ -25,7 +25,7 @@ SECRET_KEY = "'django-insecure-mkpbvc(lpl#4fy9cg5#g3w_nw(jleu1p81co=*6ibuq%gl6g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["10.0.0.248"]
+ALLOWED_HOSTS = ["192.168.86.41"]
 
 
 # Application definition
@@ -105,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 #whitelisting react port
 CORS_ORIGIN_WHITELIST = [
-    "http://10.0.0.248:3000"
+    "http://192.168.86.41:3000"
 ]
 
 
