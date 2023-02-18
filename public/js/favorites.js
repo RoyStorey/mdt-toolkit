@@ -1,36 +1,61 @@
-const favorites = (
-  <div class="favorites" id="favoritesBar">
+// localStorage.setItem(name, value);
+// localStorage.getItem(name);
+// localStorage.removeItem(name);
+
+// localStorage.clear();
+
+
+// storey's job is to get the data to this 
+// let favoritesData = {
+//   0:{
+//     title:'bing',
+//     url:'chilling'
+//   },
+//   1:{
+//     title:'google',
+//     url:'https://google.com'
+//   }
+// }
+
+// this is how we set the object into storage
+// localStorage.setItem(favorites,JSON.stringify(favoritesData))
+// this is how we get the objects from the storage
+let favoriteData = JSON.parse(localStorage.getItem(favorites))
+// console.log(favoriteData)
+let favoriteList = []
+console.log(favoriteData)
+for (let i = 0; i < Object.keys(favoriteData).length; i++){
+  var currentFavorite = favoriteData[i]
+  var favoriteListTemplate = (
+    <li>
+    <div className="menuItem">
+      <button><i className="fa-solid fa-xmark"></i></button>
+      <p><a href={currentFavorite['url']}>{currentFavorite['title']}</a></p>
+    </div>
+    </li>
+  )
+  favoriteList.push(favoriteListTemplate)
+}
+console.log(currentFavorite)
+console.log(favoriteList)
+
+
+let favorites = (
+  <div className="favorites" id="favoritesBar">
     <div>
-      <div class="favoritesHeader">
+      <div className="favoritesHeader">
         <button id="favorites-close" onClick={favoritesBarClosed}>
-          <i class="fa-solid fa-xmark"></i>
+          <i className="fa-solid fa-xmark"></i>
         </button>
         <h1>Favorites</h1>
       </div>
-      <div class="favoritesMenuItemContainer">
+      <div className="favoritesMenuItemContainer">
         <ul>
-          <li>
-            <div class="menuItem">
-              <button><i class="fa-solid fa-xmark"></i></button>
-              <p>YouTube</p>
-            </div>
-          </li>
-          <li>
-            <div class="menuItem">
-              <button><i class="fa-solid fa-xmark"></i></button>
-              <p>Bing</p>
-            </div>
-          </li>
-          <li>
-            <div class="menuItem">
-              <button><i class="fa-solid fa-xmark"></i></button>
-              <p>ChatGPT</p>
-            </div>
-          </li>
-        </ul>
-      </div>
+          {favoriteList}
+      </ul>
     </div>
-    <div class="favoritesFooter">
+    </div>
+    <div className="favoritesFooter">
       <button>Export Favorites</button>
       <button>Import Favorites</button>
       <button>Clear Favorites</button>
@@ -38,7 +63,7 @@ const favorites = (
   </div>
 );
 
-const favoritesElement = document.getElementById("favorites");
+const favoritesElement = document.getElementById('favorites');
 const favoritesRoot = ReactDOM.createRoot(favoritesElement);
 
 function favoritesBarActive() {
@@ -50,5 +75,5 @@ function favoritesBarClosed() {
   const favoritesBar = document.getElementById("favoritesBar");
   favoritesBar.style.right = "-25%";
 }
-
 favoritesRoot.render(favorites);
+
