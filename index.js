@@ -1,9 +1,8 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-// const bootstrap = require("bootstrap/dists/css/bootstrap.min.css")
 
-const hostname = '192.168.86.41';
+const hostname = '10.0.0.248';
 const port = 3000;
 
 const server = http.createServer((req, res) => {

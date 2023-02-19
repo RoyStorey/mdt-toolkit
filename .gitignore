@@ -1,4 +1,2 @@
 node_modules
-index.js
-settings.py
-manage.py
+variables.env

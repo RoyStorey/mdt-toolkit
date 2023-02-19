@@ -20,10 +20,11 @@
 // this is how we set the object into storage
 // localStorage.setItem(favorites,JSON.stringify(favoritesData))
 // this is how we get the objects from the storage
+
+
 let favoriteData = JSON.parse(localStorage.getItem(favorites))
 // console.log(favoriteData)
 let favoriteList = []
-console.log(favoriteData)
 for (let i = 0; i < Object.keys(favoriteData).length; i++){
   var currentFavorite = favoriteData[i]
   var favoriteListTemplate = (
@@ -36,8 +37,8 @@ for (let i = 0; i < Object.keys(favoriteData).length; i++){
   )
   favoriteList.push(favoriteListTemplate)
 }
-console.log(currentFavorite)
-console.log(favoriteList)
+
+// need to pull the data / splice the removed data from the object - re-set the local storage data with stringified object
 
 
 let favorites = (
