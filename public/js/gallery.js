@@ -3,7 +3,9 @@ const galleryRoot = ReactDOM.createRoot(galleryElement);
 var cardDataObjects = [];
 var cardTitles = [];
 var cardUniqueTags = [];
-fetch("http://192.168.86.41:8000/api/Earlkits/?format=json")
+
+
+fetch("http://10.0.0.248:8000/api/Earlkits/?format=json")
   .then(function (response) {
     return response.text();
   })

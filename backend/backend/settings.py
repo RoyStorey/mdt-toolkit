@@ -18,6 +18,7 @@ load_dotenv(find_dotenv('./variables.env'))
 
 HOST_IP = os.environ.get('HOST_IP')
 SECRETKEY = os.environ.get('SECRET_KEY')
+WHITELISTED_REACT = os.environ.get('WHITELISTED_REACT')
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -113,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 #whitelisting react port
 CORS_ORIGIN_WHITELIST = [
-    "http://192.168.86.41:3000"
+    WHITELISTED_REACT
 ]
 
 

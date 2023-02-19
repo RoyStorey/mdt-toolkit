@@ -112,3 +112,7 @@
 .favoritesFooter button:hover {
   background-color: var(--prettyButtonHover);
 }
+
+#importFavoriteInput {
+  display: none;
+}
