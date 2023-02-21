@@ -24,6 +24,7 @@ fetch("http://172.16.220.110:8000/api/Earlkits/?format=json")
       }
 
       function addFavorite(curCard) {
+        document.getElementById(curCard["uid"]).classList.toggle("fa-solid");
         if (!favoritedItems.some((item) => item.title === curCard.title)) {
           favoritedItems.push(curCard);
           localStorage.setItem("favorites", JSON.stringify(favoritedItems));

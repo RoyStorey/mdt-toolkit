@@ -119,7 +119,7 @@ function removeFavorite(btn) {
 }
 
 function clearFavorites() {
-  localStorage.removeItem(favorites);
+  localStorage.clear();
   location.reload();
 }
 
