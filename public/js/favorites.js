@@ -1,19 +1,3 @@
-// console.log(favoritedItems);
-
-// storey's job is to get the data to this
-// let favoritesData = {
-//   0:{
-//     title:'bing',
-//     url:'chilling'
-//   },
-//   1:{
-//     title:'google',
-//     url:'https://google.com'
-//   }
-// }
-// localStorage.setItem(favorites, JSON.stringify(favoritedItems));
-console.log(favoritedItems);
-
 // this is how we set the object into storage
 var favoriteList = [];
 // populates user favorites from browser storage
