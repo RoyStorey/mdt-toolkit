@@ -28,15 +28,17 @@ input::placeholder {
 }
 
 .bottomOfContent button {
-background:linear-gradient(90deg, rgb(204, 190, 111), rgb(197, 166, 108));
-outline: 1px solid rgb(207, 191, 146);
+color:white;
+background:linear-gradient(90deg, rgb(199, 121, 49), rgb(184, 62, 46));
+/* outline: 1px solid rgb(207, 191, 146); */
+outline:0px;
 }
 
 .bottomOfContent button:hover {
-background-color: rgb(207, 197, 168);
-outline: 1px solid rgb(207, 202, 177);
+/* background-color: rgb(207, 197, 168); */
+background:linear-gradient(90deg, rgba(199, 121, 49, rgba(184, 62, 46, 0.788) 62, 46));
+/* outline: 1px solid rgb(207, 202, 177); */
 transition-duration: .2s;
-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 .card .breakLine {
     background:linear-gradient(90deg, rgb(204, 190, 111), rgb(197, 166, 108));
