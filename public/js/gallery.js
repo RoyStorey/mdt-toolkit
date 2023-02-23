@@ -3,7 +3,11 @@ const galleryRoot = ReactDOM.createRoot(galleryElement);
 var cardTitles = [];
 var cardUniqueTags = [];
 var favoritedItems = JSON.parse(localStorage.getItem("favorites")) || [];
-console.log(favoritedItems);
+// console.log(favoritedItems);
+
+function checkIfFavorited() {
+  console.log(favoritedItems);
+}
 
 fetch("http://172.16.220.110:8000/api/Earlkits/?format=json")
   .then(function (response) {
@@ -54,7 +58,7 @@ fetch("http://172.16.220.110:8000/api/Earlkits/?format=json")
                 id="heartButton"
                 onClick={() => addFavorite(parsedDBData[i])}
               >
-                <i id={currentCard["uid"]} class="fa-regular fa-heart"></i>
+                <i id={i} class="fa-regular fa-heart"></i>
               </button>
             </content>
           </div>
@@ -87,4 +91,5 @@ fetch("http://172.16.220.110:8000/api/Earlkits/?format=json")
     );
     // tags end.
     galleryRoot.render(gallery);
+    setFavorites();
   });

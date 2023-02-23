@@ -73,3 +73,9 @@ fetch("/js/website.csv")
   .then(function (csv) {
     CSVToArray(csv, ",");
   });
+
+// We underutilized this file, but if we delete it everything breaks.
+
+function isElementInFunction(jnun) {
+  favoritedItems.some((item) => item.jnun === curCard.jnun);
+}

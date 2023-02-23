@@ -26,7 +26,7 @@ if (
     favoriteList.push(favoriteListTemplate);
   }
 }
-console.log(favoriteList);
+// console.log(favoriteList);
 
 let favorites_element = (
   <div className="favorites" id="favoritesBar">
@@ -76,28 +76,10 @@ favoritesRoot.render(favorites_element);
 function removeFavorite(btn) {
   btn.preventDefault();
   const selectedFavorite = btn.target.id;
-
   for (let i = 0; i < Object.keys(favoritedItems).length; i++) {
     if (favoritedItems[i]["title"] === selectedFavorite) {
-      localStorage.removeItem(favorites);
-
-      // Check if the removed favorite is index 0 of the object
-      if (i === 0) {
-        const newfavoritedItems = {};
-        let j = 0;
-        for (let key in favoritedItems) {
-          if (key !== "0") {
-            newfavoritedItems[j] = favoritedItems[key];
-            j++;
-          }
-        }
-        favoritedItems = newfavoritedItems;
-      } else {
-        delete favoritedItems[i];
-      }
-
-      localStorage.setItem(favorites, JSON.stringify(favoritedItems));
-      location.reload();
+      favoritedItems.splice(i, 1);
+      localStorage.setItem("favorites", JSON.stringify(favoritedItems));
     }
   }
 }
@@ -138,4 +120,16 @@ async function parseJsonFile(file) {
     document.getElementById("importFavoriteInput").innerText = reader.result;
   });
   reader.readAsText(document.querySelector("input").files[0]);
+}
+
+function setFavorites() {
+  for (let i = 0; i < favoritedItems.length; i++) {
+    let selectedUID = favoritedItems[i].uid;
+    let element = document.getElementById(selectedUID);
+    console.log("test2");
+    if (element) {
+      element.classList.add("fa-solid");
+      console.log("test");
+    }
+  }
 }
