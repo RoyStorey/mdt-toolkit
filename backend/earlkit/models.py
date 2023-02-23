@@ -3,7 +3,7 @@ import uuid
 import PIL
 
 class Earlkit(models.Model):
-    uid=models.CharField(null=False,default=uuid.uuid4().hex,unique=False,editable=False,max_length=15)
+    uid=models.CharField(null=False,default=uuid.uuid4().hex,unique=True,editable=False,max_length=15)
     title=models.CharField(max_length=50)
     url=models.CharField(max_length=100)
     desc=models.TextField(default="",help_text='Please enter a description for the site\nMax 500 characters',max_length=500)
