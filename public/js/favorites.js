@@ -38,7 +38,7 @@ let favorites_element = (
         <h1>Favorites</h1>
       </div>
       <div className="favoritesMenuItemContainer">
-        <ul>{favoriteList}</ul>
+        <ul id="listOfFavoritedItems">{favoriteList}</ul>
       </div>
     </div>
     <div className="favoritesFooter">
@@ -86,7 +86,8 @@ function removeFavorite(btn) {
 
 function clearFavorites() {
   localStorage.removeItem("favorites");
-  location.reload();
+  document.getElementById("listOfFavoritedItems").innerHTML =
+    "<h1>No Favorites</h1>";
 }
 
 // need to export localstorage into a downloaded json file.

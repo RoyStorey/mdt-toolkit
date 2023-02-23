@@ -58,7 +58,7 @@ fetch("http://172.16.220.110:8000/api/Earlkits/?format=json")
                 id="heartButton"
                 onClick={() => addFavorite(parsedDBData[i])}
               >
-                <i id={i} class="fa-regular fa-heart"></i>
+                <i id={currentCard["uid"]} class="fa-regular fa-heart"></i>
               </button>
             </content>
           </div>
