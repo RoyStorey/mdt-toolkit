@@ -1,31 +1,36 @@
 // this is how we set the object into storage
 var favoriteList = [];
 // populates user favorites from browser storage
-if (
-  !localStorage.getItem("favorites") ||
-  Object.keys(localStorage.getItem("favorites")).length === 2
-) {
-  var favoriteListTemplate = <h1>No Favorites</h1>;
-  favoriteList.push(favoriteListTemplate);
-} else {
-  // var favoritedItems = JSON.parse(localStorage.getItem(favorites));
-  for (let i = 0; i < Object.keys(favoritedItems).length; i++) {
-    var currentFavorite = favoritedItems[i];
-    var favoriteListTemplate = (
-      <li>
-        <div className="menuItem">
-          <button onClick={removeFavorite}>
-            <i id={currentFavorite["title"]} className="fa-solid fa-xmark"></i>
-          </button>
-          <p>
-            <a href={currentFavorite["url"]}>{currentFavorite["title"]}</a>
-          </p>
-        </div>
-      </li>
-    );
+function displayFavoritedItems(browserFavoriteData) {
+  if (!browserFavoriteData || Object.keys(browserFavoriteData).length === 2) {
+    var favoriteListTemplate = <h1>No Favorites</h1>;
     favoriteList.push(favoriteListTemplate);
+  } else {
+    // var favoritedItems = JSON.parse(localStorage.getItem(favorites));
+    for (let i = 0; i < Object.keys(favoritedItems).length; i++) {
+      var currentFavorite = favoritedItems[i];
+      var favoriteListTemplate = (
+        <li>
+          <div className="menuItem">
+            <button onClick={removeFavorite}>
+              <i
+                id={currentFavorite["title"]}
+                className="fa-solid fa-xmark"
+              ></i>
+            </button>
+            <p>
+              <a href={currentFavorite["url"]}>{currentFavorite["title"]}</a>
+            </p>
+          </div>
+        </li>
+      );
+      favoriteList.push(favoriteListTemplate);
+    }
   }
 }
+
+var currentBrowserFavoriteData = localStorage.getItem("favorites");
+displayFavoritedItems(currentBrowserFavoriteData);
 // console.log(favoriteList);
 
 let favorites_element = (
@@ -68,8 +73,8 @@ function favoritesBarClosed() {
   const favoritesBar = document.getElementById("favoritesBar");
   favoritesBar.style.right = "-25%";
 }
-favoritesRoot.render(favorites_element);
 
+favoritesRoot.render(favorites_element);
 // addFavorite() function is inside of the for-loop on gallery.js.
 
 // need to splice the selected value out of the object and then resave into browser storage
