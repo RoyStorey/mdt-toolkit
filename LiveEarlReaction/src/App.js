@@ -1,11 +1,16 @@
-import logo from "./logo.svg";
 import React from "react";
+import logo from "./logo.svg";
+import Header from "./components/Header.js";
+import Gallery from "./components/Gallery";
+import Footer from "./components/Footer.js";
+
 import "./App.css";
+import "./css/main.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to win.
@@ -18,7 +23,10 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+      <Header />
+      <Gallery />
+      <Footer />
     </div>
   );
 }
