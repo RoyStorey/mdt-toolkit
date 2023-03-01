@@ -12,6 +12,7 @@ let apiIP;
 fetch("/data")
   .then((response) => response.json())
   .then((data) => {
+    console.log(data);
     apiIP = data.value;
     fetch(`http://${apiIP}:8000/api/Earlkits/?format=json`)
       .then(function (response) {
