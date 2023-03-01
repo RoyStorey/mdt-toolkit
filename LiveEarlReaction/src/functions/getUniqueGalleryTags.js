@@ -1,15 +1,15 @@
 import React from "react";
 
-var cardUniqueTags = [];
+export var cardUniqueTags = [];
 
-function getGrossGalleryTags(currentCard) {
-  for (let i = 0; i < currentCard["tags"].split(",").length; i++) {
-    let individualTag = <p>#{currentCard["tags"].split(",")[i]}</p>;
-    cardDisplayTags.push(individualTag);
-  }
-}
+// export function getGrossGalleryTags(currentCard) {
+//   for (let i = 0; i < currentCard["tags"].split(",").length; i++) {
+//     let individualTag = <p>#{currentCard["tags"].split(",")[i]}</p>;
+//     cardDisplayTags.push(individualTag);
+//   }
+// }
 
-function getUniqueGalleryTags(currentCard) {
+export function getUniqueGalleryTags(currentCard) {
   var cardTagArray = currentCard["tags"].split(",");
   for (let j = 0; j < cardTagArray.length; j++) {
     if (!cardUniqueTags.includes(cardTagArray[j])) {
@@ -17,5 +17,3 @@ function getUniqueGalleryTags(currentCard) {
     }
   }
 }
-
-export default { getUniqueGalleryTags, getGrossGalleryTags };

@@ -1,4 +1,7 @@
 import React from "react";
+import { cardUniqueTags } from "./getUniqueGalleryTags";
+
+export var formattedTags = [];
 
 function formatCardTags() {
   for (let tag in cardUniqueTags) {
