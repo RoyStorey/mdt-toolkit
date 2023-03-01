@@ -35,48 +35,50 @@ var currentBrowserFavoriteData = localStorage.getItem("favorites");
 displayFavoritedItems(currentBrowserFavoriteData);
 // console.log(favoriteList);
 
-function favorites_element() {
-  <div className="favorites" id="favoritesBar">
-    <div>
-      <div className="favoritesHeader">
-        <button id="favorites-close" onClick={window.favoritesBarClosed}>
-          <i className="fa-solid fa-xmark"></i>
+function FavoritesElement() {
+  return (
+    <div className="favorites" id="favoritesBar">
+      <div>
+        <div className="favoritesHeader">
+          <button id="favorites-close" onClick={favoritesBarClosed}>
+            <i className="fa-solid fa-xmark"></i>
+          </button>
+          <h1>Favorites</h1>
+        </div>
+        <div className="favoritesMenuItemContainer">
+          <ul id="listOfFavoritedItems">{favoriteList}</ul>
+        </div>
+      </div>
+      <div className="favoritesFooter">
+        <button onClick={onDownload}>Export Favorites</button>
+        <button id="importFavoriteButton" onClick={importFavorites}>
+          Import Favorites
+          <input
+            id="importFavoriteInput"
+            type={"file"}
+            // onChange={parseJsonFile}
+          ></input>
         </button>
-        <h1>Favorites</h1>
-      </div>
-      <div className="favoritesMenuItemContainer">
-        <ul id="listOfFavoritedItems">{favoriteList}</ul>
+        <button onClick={clearFavorites}>Clear Favorites</button>
       </div>
     </div>
-    <div className="favoritesFooter">
-      <button onClick={onDownload}>Export Favorites</button>
-      <button id="importFavoriteButton" onClick={importFavorites}>
-        Import Favorites
-        <input
-          id="importFavoriteInput"
-          type={"file"}
-          // onChange={parseJsonFile}
-        ></input>
-      </button>
-      <button onClick={clearFavorites}>Clear Favorites</button>
-    </div>
-  </div>;
-}
-
-function favoritesBarActive() {
-  const favoritesBar = document.getElementById("favoritesBar");
-  favoritesBar.style.right = "0%";
-}
-
-function favoritesBarClosed() {
-  const favoritesBar = document.getElementById("favoritesBar");
-  favoritesBar.style.right = "-25%";
+  );
 }
 
 // addFavorite() function is inside of the for-loop on gallery.js.
 
+export function favoritesBarActive() {
+  const favoritesBar = document.getElementById("favoritesBar");
+  favoritesBar.style.right = "0%";
+}
+
+export function favoritesBarClosed() {
+  const favoritesBar = document.getElementById("favoritesBar");
+  favoritesBar.style.right = "-25%";
+}
+
 // need to splice the selected value out of the object and then resave into browser storage
-function removeFavorite(btn) {
+export function removeFavorite(btn) {
   btn.preventDefault();
   const selectedFavorite = btn.target.id;
   for (let i = 0; i < Object.keys(favoritedItems).length; i++) {
@@ -87,14 +89,14 @@ function removeFavorite(btn) {
   }
 }
 
-function clearFavorites() {
+export function clearFavorites() {
   localStorage.removeItem("favorites");
   document.getElementById("listOfFavoritedItems").innerHTML =
     "<h1>No Favorites</h1>";
 }
 
 // need to export localstorage into a downloaded json file.
-function exportFavorites(content, fileName, contentType) {
+export function exportFavorites(content, fileName, contentType) {
   const a = document.createElement("a");
   const file = new Blob([content], { type: contentType });
   a.href = URL.createObjectURL(file);
@@ -102,7 +104,7 @@ function exportFavorites(content, fileName, contentType) {
   a.click();
 }
 
-function onDownload() {
+export function onDownload() {
   exportFavorites(
     JSON.stringify(favoritedItems),
     "favorites.json",
@@ -111,12 +113,12 @@ function onDownload() {
 }
 
 // import using exported json file
-function importFavorites() {
+export function importFavorites() {
   const uploadInput = document.getElementById("importFavoriteInput");
   uploadInput.click();
 }
 
-function setFavorites() {
+export function setFavorites() {
   for (let i = 0; i < favoritedItems.length; i++) {
     let selectedUID = favoritedItems[i].uid;
     let element = document.getElementById(selectedUID);
@@ -128,4 +130,4 @@ function setFavorites() {
   }
 }
 
-export default { favoritesBarActive, setFavorites };
+export default FavoritesElement;

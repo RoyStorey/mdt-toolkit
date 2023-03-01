@@ -3,8 +3,9 @@ import logo from "./logo.svg";
 import Header from "./components/Header.js";
 import Gallery from "./components/Gallery";
 import Footer from "./components/Footer.js";
-
+import FavoritesElement from "./components/Favorites";
 import "./App.css";
+import "./css/darkmode.css";
 import "./css/main.css";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           Learn React
         </a>
       </header> */}
+      <FavoritesElement />
       <Header />
       <Gallery />
       <Footer />

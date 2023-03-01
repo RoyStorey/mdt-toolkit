@@ -1,5 +1,6 @@
 import React from "react";
-import favoritesBarActive from "./Favorites";
+import { favoritesBarActive } from "./Favorites";
+import { favoritesBarClosed } from "./Favorites";
 
 function darkModeToggle() {
   if (!document.head.contains(darkmodeCSS)) {

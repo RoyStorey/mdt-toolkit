@@ -1,13 +1,34 @@
 import React from "react";
 import formatCard from "../functions/formatCard";
-import setFavorites from "./Favorites";
+import { setFavorites } from "./Favorites";
 
 var cardTitles = [];
 var cardUniqueTags = [];
-
+var dbData = [];
 var formattedTags = [];
 var cardGallery = [];
 let apiIP;
+
+fetch("/data")
+  .then((response) => response.json())
+  .then((data) => {
+    apiIP = data.value;
+    fetch(`http://${apiIP}:8000/api/Earlkits/?format=json`)
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (rawDBData) {
+        let parsedDBData = JSON.parse(rawDBData);
+        dbData.push(parsedDBData);
+        setFavorites();
+      });
+  });
+
+for (let i = 0; i < dbData.length; i++) {
+  var currentCard = dbData[i];
+  cardTitles.push(currentCard["title"]);
+  cardGallery.push(formatCard(dbData[i]));
+}
 
 function Gallery() {
   return (
@@ -19,6 +40,8 @@ function Gallery() {
     </div>
   );
 }
+
+export default Gallery;
 
 // fetch("/data")
 //   .then((response) => response.json())
@@ -55,29 +78,3 @@ function Gallery() {
 //         setFavorites();
 //       });
 //   });
-
-fetch("/data")
-  .then((response) => response.json())
-  .then((data) => {
-    apiIP = data.value;
-    fetch(`http://${apiIP}:8000/api/Earlkits/?format=json`)
-      .then(function (response) {
-        return response.text();
-      })
-      .then(function (rawDBData) {
-        var parsedDBData = JSON.parse(rawDBData);
-        for (let i = 0; i < parsedDBData.length; i++) {
-          var currentCard = parsedDBData[i];
-          cardTitles.push(currentCard["title"]);
-
-          cardGallery.push(formatCard(parsedDBData[i]));
-
-          //tags.
-        }
-
-        // tags end.
-        setFavorites();
-        console.log(cardGallery);
-      });
-  });
-export default Gallery;
