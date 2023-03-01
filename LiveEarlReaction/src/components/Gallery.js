@@ -1,37 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import formatCard from "../functions/formatCard";
+import { getUniqueGalleryTags } from "../functions/getUniqueGalleryTags";
+import formatCardTags from "../functions/formatCardTags";
 import { setFavorites } from "./Favorites";
 
-var cardTitles = [];
-var cardUniqueTags = [];
-var dbData = [];
-var formattedTags = [];
-var cardGallery = [];
-let apiIP;
+// function TestHook() {
+//   const [name, setName] = useState("initValue");
+// }
+function Gallery() {
+  var [cardTitles, setCardTitles] = useState([]);
+  var [cardUniqueTags, setCardUniqueTags] = useState([]);
+  var [dbData, setDbData] = useState([]);
+  var [formattedTags, setFormattedTags] = useState([]);
+  var [cardGallery, setCardGallery] = useState([]);
+  let apiIP;
 
-fetch("/data")
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-    apiIP = data.value;
-    fetch(`http://${apiIP}:8000/api/Earlkits/?format=json`)
+  useEffect(() => {
+    fetch(`http://172.16.220.110:8000/api/Earlkits/?format=json`)
       .then(function (response) {
         return response.text();
       })
       .then(function (rawDBData) {
         let parsedDBData = JSON.parse(rawDBData);
-        dbData.push(parsedDBData);
+        setDbData(parsedDBData);
         setFavorites();
       });
-  });
+  }, []);
+  for (let i = 0; i < dbData.length; i++) {
+    var currentCard = dbData[i];
 
-for (let i = 0; i < dbData.length; i++) {
-  var currentCard = dbData[i];
-  cardTitles.push(currentCard["title"]);
-  cardGallery.push(formatCard(dbData[i]));
-}
+    cardTitles.push(currentCard["title"]);
+    cardGallery.push(formatCard(dbData[i]));
+  }
 
-function Gallery() {
   return (
     <div class="galBodyContainer">
       <div class="tag-pill-container">
@@ -43,7 +44,6 @@ function Gallery() {
 }
 
 export default Gallery;
-
 // fetch("/data")
 //   .then((response) => response.json())
 //   .then((data) => {
@@ -53,9 +53,9 @@ export default Gallery;
 //         return response.text();
 //       })
 //       .then(function (rawDBData) {
-//         let parsedDBData = JSON.parse(rawDBData);
-//         for (let i = 0; i < parsedDBData.length; i++) {
-//           var currentCard = parsedDBData[i];
+//         let dbData = JSON.parse(rawDBData);
+//         for (let i = 0; i < dbData.length; i++) {
+//           var currentCard = dbData[i];
 //           cardTitles.push(currentCard["title"]);
 
 //           for (let i = 0; i < currentCard["tags"].split(",").length; i++) {
