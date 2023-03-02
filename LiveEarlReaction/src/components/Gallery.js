@@ -1,44 +1,35 @@
 import React, { useState, useEffect } from "react";
 import formatCard from "../functions/formatCard";
-import { getUniqueGalleryTags } from "../functions/getUniqueGalleryTags";
-import formatCardTags from "../functions/formatCardTags";
+import { getCardTags } from "../functions/getCardTags";
 import { setFavorites } from "./Favorites";
+import formatGalleryPillTags from "../functions/formatGalleryPillTags";
 
-// function TestHook() {
-//   const [name, setName] = useState("initValue");
-// }
 function Gallery() {
-  var [cardTitles, setCardTitles] = useState([]);
-  var [cardUniqueTags, setCardUniqueTags] = useState([]);
-  var [dbData, setDbData] = useState([]);
-  var [formattedTags, setFormattedTags] = useState([]);
-  var [cardGallery, setCardGallery] = useState([]);
-  let apiIP;
+  const [cardTitles, setCardTitles] = useState([]);
+  const [galleryUniqueTags, setGalleryUniqueTags] = useState([]);
+  const [dbData, setDbData] = useState([]);
 
   useEffect(() => {
     fetch(`http://172.16.220.110:8000/api/Earlkits/?format=json`)
-      .then(function (response) {
-        return response.text();
-      })
-      .then(function (rawDBData) {
-        let parsedDBData = JSON.parse(rawDBData);
+      .then((response) => response.json())
+      .then((parsedDBData) => {
         setDbData(parsedDBData);
         setFavorites();
-      });
+        setCardTitles(parsedDBData.map((card) => card.title));
+        setGalleryUniqueTags(getCardTags(parsedDBData));
+      })
+      .catch((error) => console.error(error));
   }, []);
-  for (let i = 0; i < dbData.length; i++) {
-    var currentCard = dbData[i];
 
-    cardTitles.push(currentCard["title"]);
-    cardGallery.push(formatCard(dbData[i]));
-  }
+  const cardGallery = dbData.map((card) => formatCard(card));
+  const tagGallery = formatGalleryPillTags(galleryUniqueTags);
 
   return (
-    <div class="galBodyContainer">
-      <div class="tag-pill-container">
-        <span class="pill-bar">{formattedTags}</span>
+    <div className="galBodyContainer">
+      <div className="tag-pill-container">
+        <span className="pill-bar">{tagGallery}</span>
       </div>
-      <div class="galleryComponentHolder">{cardGallery}</div>
+      <div className="galleryComponentHolder">{cardGallery}</div>
     </div>
   );
 }
@@ -68,8 +59,8 @@ export default Gallery;
 //           //tags.
 //           let cardTagArray = currentCard["tags"].split(",");
 //           for (let j = 0; j < cardTagArray.length; j++) {
-//             if (!cardUniqueTags.includes(cardTagArray[j])) {
-//               cardUniqueTags.push(cardTagArray[j]);
+//             if (!galleryUniqueTags.includes(cardTagArray[j])) {
+//               galleryUniqueTags.push(cardTagArray[j]);
 //             }
 //           }
 //         }
