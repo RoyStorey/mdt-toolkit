@@ -1,15 +1,12 @@
-import React from "react";
-import favoritedItems from "./Gallery";
+import React, { useState, useEffect } from "react";
+import getFavoritedItemsFromBrowser from "../functions/getFavoritedItemsFromBrowser";
 // this is how we set the object into storage
+var favoritedItems = getFavoritedItemsFromBrowser();
 var favoriteList = [];
-// populates user favorites from browser storage
-function displayFavoritedItems(browserFavoriteData) {
-  if (!browserFavoriteData || Object.keys(browserFavoriteData).length === 2) {
-    var favoriteListTemplate = <h1>No Favorites</h1>;
-    favoriteList.push(favoriteListTemplate);
-  } else {
-    // var favoritedItems = JSON.parse(localStorage.getItem(favorites));
-    for (let i = 0; i < Object.keys(favoritedItems).length; i++) {
+
+function formatFavoritedItems(favoritedItems) {
+  if (favoritedItems != null) {
+    for (let i = 0; i < favoritedItems.length; i++) {
       var currentFavorite = favoritedItems[i];
       var favoriteListTemplate = (
         <li>
@@ -28,14 +25,17 @@ function displayFavoritedItems(browserFavoriteData) {
       );
       favoriteList.push(favoriteListTemplate);
     }
+  } else {
+    var favoriteListTemplate = <h1>No Favorited Items</h1>;
+    favoriteList.push(favoriteListTemplate);
   }
 }
+// populates user favorites from browser storage
+// function setFavoriteListWithFavoritedItems(browserFavoriteData) {
+//   formatFavoritedItems(browserFavoriteData);
+// }
 
-var currentBrowserFavoriteData = localStorage.getItem("favorites");
-displayFavoritedItems(currentBrowserFavoriteData);
-// console.log(favoriteList);
-
-function FavoritesElement() {
+function formatFavoritesBar(formattedFavoritesList) {
   return (
     <div className="favorites" id="favoritesBar">
       <div>
@@ -65,6 +65,10 @@ function FavoritesElement() {
   );
 }
 
+function FavoritesElement() {
+  formatFavoritedItems(favoritedItems);
+  return formatFavoritesBar(favoriteList);
+}
 // addFavorite() function is inside of the for-loop on gallery.js.
 
 export function favoritesBarActive() {
@@ -91,8 +95,6 @@ export function removeFavorite(btn) {
 
 export function clearFavorites() {
   localStorage.removeItem("favorites");
-  document.getElementById("listOfFavoritedItems").innerHTML =
-    "<h1>No Favorites</h1>";
 }
 
 // need to export localstorage into a downloaded json file.

@@ -1,5 +1,6 @@
 import React from "react";
 import addFavorite from "./addFavorite";
+import { dbData } from "../components/Gallery";
 
 var cardDisplayTags = [];
 
@@ -22,9 +23,9 @@ function formatCard(currentCard) {
           </div>
           <div class="breakLine"></div>
           <h2>{currentCard["title"]}</h2>
-          {/* <button id="heartButton" onClick={() => addFavorite(parsedDBData[i])}>
+          <button id="heartButton" onClick={() => addFavorite(currentCard)}>
             <i id={currentCard["uid"]} class="fa-regular fa-heart"></i>
-          </button> */}
+          </button>
         </content>
       </div>
     </div>

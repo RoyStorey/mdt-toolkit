@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { favoritesBarActive } from "./Favorites";
 import { favoritesBarClosed } from "./Favorites";
+import "../css/darkmode/darkmode.css";
 
 function Header() {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -8,15 +9,15 @@ function Header() {
   );
 
   useEffect(() => {
-    const style = document.createElement("style");
-    style.textContent = `
-      @import url('css/main.css');
-      ${isDarkMode ? "body { background-color: black; } .dark-mode {}" : ""}
-    `;
-    document.head.appendChild(style);
-    return () => {
-      document.head.removeChild(style);
-    };
+    if (!isDarkMode) {
+      console.log("false");
+      document.body.classList.remove("dark");
+      document.body.classList.add("light");
+    } else {
+      console.log("true");
+      document.body.classList.remove("light");
+      document.body.classList.add("dark");
+    }
   }, [isDarkMode]);
 
   const handleToggle = () => {
