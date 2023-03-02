@@ -11,23 +11,16 @@ function darkModeToggle() {
     localStorage.setItem("darkmode", "false");
   }
 }
-
-// Create a new <link> element
 var darkmodeCSS = document.createElement("link");
-
-// Set the attributes of the <link> element
 darkmodeCSS.rel = "stylesheet";
 darkmodeCSS.type = "text/css";
 darkmodeCSS.href = "../src/css/darkmode.css";
-
-// Add the <link> element to the <head> of the document
 var darkModeCached = localStorage.getItem("darkmode");
 
 if (darkModeCached === "true") {
   document.head.appendChild(darkmodeCSS);
   localStorage.setItem("darkmode", "true");
 } else if (darkModeCached === "false") {
-  // document.head.removeChild(darkmodeCSS); broke
   localStorage.setItem("darkmode", "false");
 } else {
   console.log("err");
