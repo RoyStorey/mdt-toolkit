@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { favoritesBarActive } from "./Favorites";
-import { favoritesBarClosed } from "./Favorites";
+import favoritesBarActive from "../functions/favoritesBarActive";
 import "../css/darkmode/darkmode.css";
 
 function Header() {

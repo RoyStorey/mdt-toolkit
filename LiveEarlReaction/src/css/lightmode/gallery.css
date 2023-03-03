@@ -1,7 +1,8 @@
 .galBodyContainer {
     margin-top: 8vh;
     /* display:block;     */
-    padding: 0vh 20% 5% 20%;
+    padding: 0vh 20% 0vh 20%;
+    margin-bottom: 8vh;
 
 }
 
