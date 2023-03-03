@@ -5,7 +5,6 @@ function addFavorite(curCard) {
   if (!favoritedItems.some((item) => item.title === curCard.title)) {
     favoritedItems.push(curCard);
     localStorage.setItem("favorites", JSON.stringify(favoritedItems));
-    console.log(favoritedItems);
   }
 }
 

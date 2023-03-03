@@ -2,11 +2,11 @@ import React from "react"
 import { removeFavorite } from "./removeFavorite";
 
 function formatFavoritedItems(favoritedItems) {
-  var favoriteList = []
+  var formattedFavoriteList = []
   if (favoritedItems != null) {
     for (let i = 0; i < favoritedItems.length; i++) {
       var currentFavorite = favoritedItems[i];
-      let favoriteListTemplate = (
+      let formattedFavoriteListTemplate = (
         <li>
           <div className="menuItem">
             <button onClick={removeFavorite}>
@@ -21,13 +21,13 @@ function formatFavoritedItems(favoritedItems) {
           </div>
         </li>
       )
-      favoriteList.push(favoriteListTemplate);
+      formattedFavoriteList.push(formattedFavoriteListTemplate);
     }
   } else {
-    let favoriteListTemplate = <h1>No Favorited Items</h1>;
-    favoriteList.push(favoriteListTemplate);
+    let formattedFavoriteListTemplate = <h1>No Favorited Items</h1>;
+    formattedFavoriteList.push(formattedFavoriteListTemplate);
   }
-  return favoriteList
+  return formattedFavoriteList
 }
 
 export default formatFavoritedItems
