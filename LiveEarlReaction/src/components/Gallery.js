@@ -10,7 +10,7 @@ function Gallery() {
   const [dbData, setDbData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://192.168.0.192:8000/api/Earlkits/?format=json`)
+    fetch(`http://172.16.220.110:8000/api/Earlkits/?format=json`)
       .then((response) => response.json())
       .then((parsedDBData) => {
         setDbData(parsedDBData);
