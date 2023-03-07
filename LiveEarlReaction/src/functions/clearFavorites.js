@@ -1,3 +1,4 @@
-export function clearFavorites() {
-  localStorage.removeItem("favorites");
-}
+// export function clearFavorites() {
+  
+  // window.location.reload()
+// }

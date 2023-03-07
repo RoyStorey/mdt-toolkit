@@ -1,4 +1,4 @@
-import { favoritedItems } from "../components/Favorites";
+import { favoritedItems } from "./getFavoritedItemsFromBrowser";
 
 export function exportFavorites(content, fileName, contentType) {
   const a = document.createElement("a");

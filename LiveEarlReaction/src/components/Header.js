@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import favoritesBarActive from "../functions/favoritesBarActive";
 import "../css/darkmode/darkmode.css";
+import search from "../functions/Searchbar";
 
 function Header() {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -9,11 +10,9 @@ function Header() {
 
   useEffect(() => {
     if (!isDarkMode) {
-      console.log("false");
       document.body.classList.remove("dark");
       document.body.classList.add("light");
     } else {
-      console.log("true");
       document.body.classList.remove("light");
       document.body.classList.add("dark");
     }
@@ -26,7 +25,9 @@ function Header() {
       return newIsDarkMode;
     });
   };
-
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
   return (
     <header className="headerContainer">
       <div className="logoSpot">
@@ -34,12 +35,13 @@ function Header() {
       </div>
       <div className="searchcontainer">
         <div className="searchbar">
-          <form autocomplete="off">
+          <form autocomplete="off" onSubmit={handleSubmit}>
             <input
               type="search"
               id="searchBar"
               name="querybar"
               placeholder="Search"
+              onKeyUp={search}
             ></input>
           </form>
         </div>

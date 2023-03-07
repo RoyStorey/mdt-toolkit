@@ -10,14 +10,14 @@
   display: flex;
   gap: 1rem;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .pill-tag {
   /* min-height: 25px; */
   min-width: fit-content;
   background-color: var(--prettyButtonColor);
-  padding:.5rem 1rem;
+  padding: .5rem 1rem;
   border-radius: 100px;
   font-weight: 400;
   user-select: none;

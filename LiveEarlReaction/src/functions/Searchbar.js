@@ -1,18 +1,16 @@
 function search() {
-  let listContainer = document.getElementById('list');
-  let listItems = document.getElementsByClassName('listItem');
   let input = document.getElementById('searchBar').value
   input = input.toLowerCase();
-  let noResults = true;
-  for (i = 0; i < listItems.length; i++) {
-    if (!listItems[i].innerHTML.toLowerCase().includes(input) || input === "") {
-      listItems[i].style.display = "none";
-      continue;
+  let x = document.getElementsByClassName('card');
+
+  for (let i = 0; i < x.length; i++) {
+    if (!x[i].innerHTML.toLowerCase().includes(input)) {
+      x[i].style.display = "none";
     }
     else {
-      listItems[i].style.display = "flex";
-      noResults = false;
+      x[i].style.display = "flex";
     }
   }
-  listContainer.style.display = noResults ? "none" : "block";
 }
+
+export default search;

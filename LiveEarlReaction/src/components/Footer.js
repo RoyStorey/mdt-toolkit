@@ -5,7 +5,7 @@ export default function Footer() {
     <footer>
       <p>All rights reserved 2023</p>
       <a href="/">
-        <p>Designed by R.D. Storey and B. Freeman</p>
+        <p>Designed by BonkoSphere Solutions&#8482;</p>
       </a>
     </footer>
   );

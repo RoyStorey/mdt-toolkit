@@ -1,4 +1,4 @@
-import { favoritedItems } from "../components/Favorites";
+import { favoritedItems } from "./getFavoritedItemsFromBrowser";
 
 export function setFavorites() {
   for (let i = 0; i < favoritedItems.length; i++) {
