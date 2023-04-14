@@ -8,6 +8,10 @@ const port = 3000;
 
 const app = express();
 app.use(express.static("LiveEarlReaction"));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "LiveEarlReaction/public", "index.html"));
 });

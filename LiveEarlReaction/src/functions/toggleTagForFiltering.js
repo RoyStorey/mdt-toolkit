@@ -1,13 +1,13 @@
 var selectedTags = [];
-var x = document.getElementsByClassName('card');
+var x = document.getElementsByClassName("card");
 
 function toggleTagForFiltering(tag) {
-
   const tagIndex = selectedTags.indexOf(tag);
   if (tagIndex === -1) {
     // tag doesn't exist in selectedTags, so add it
     selectedTags.push(tag);
-    document.getElementById(tag).style.background = "linear-gradient(90deg, rgb(199, 121, 49), rgb(184, 62, 46))";
+    document.getElementById(tag).style.background =
+      "linear-gradient(90deg, rgb(219, 141, 69), rgb(204, 82, 66))";
   } else {
     // tag already exists in selectedTags, so remove it
     selectedTags.splice(tagIndex, 1);
@@ -23,7 +23,7 @@ function toggleTagForFiltering(tag) {
     for (let i = 0; i < x.length; i++) {
       let shouldDisplay = false;
       for (let j = 0; j < selectedTags.length; j++) {
-        if (x[i].innerHTML.includes('#' + selectedTags[j])) {
+        if (x[i].innerHTML.includes("#" + selectedTags[j])) {
           shouldDisplay = true;
           break;
         }

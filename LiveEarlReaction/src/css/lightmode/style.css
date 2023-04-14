@@ -5,7 +5,7 @@
     --darkGray: rgba(0, 0, 0, 0.7);
     --blackGray: rgba(0, 0, 0, 0.9);
     --poopcock: #462500b4;
-    --boxShadowColor: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    --boxShadowColor: 1px 1px 10px rgba(0, 0, 0, 0.1);
     --prettyButtonColor: rgba(66, 66, 66, .08);
     --prettyButtonHover: rgba(66, 66, 66, .1);
     --prettyButtonActive: rgba(66, 66, 66, .4);
@@ -38,7 +38,7 @@ a {
 /* could be improved with sass */
 
 .dark #root {
-    background-color: rgb(17, 18, 22);
+    background: linear-gradient(0deg, #000000, #2a252e);
     margin: 0px;
     overflow-x: hidden;
 }
@@ -83,6 +83,10 @@ transition-duration: .2s;
 }
 .dark .card .breakLine {
     background:linear-gradient(90deg, rgb(204, 190, 111), rgb(197, 166, 108));
+}
+
+.dark .favorites{
+    background-color:var(--darkmodeGray)
 }
 
 .dark .favorites{

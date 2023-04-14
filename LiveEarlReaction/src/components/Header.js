@@ -32,6 +32,7 @@ function Header() {
     <header className="headerContainer">
       <div className="logoSpot">
         <h1>MDT Toolkit</h1>
+        <i class="fa-solid fa-toolbox"></i>
       </div>
       <div className="searchcontainer">
         <div className="searchbar">

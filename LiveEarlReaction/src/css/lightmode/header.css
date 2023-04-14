@@ -7,14 +7,15 @@
     justify-content: space-around;
     align-items: center;
     position: fixed;
-    background-color: inherit;
+    /* background-color: inherit; */
     z-index: 3;
     background-color: white;
     /* background: linear-gradient(90deg, orange, pink) */
 }
 
 .dark .headerContainer {
-    background-color: rgb(17, 18, 22);
+    background-color: rgba(19, 18, 20, 0.5);
+    backdrop-filter: blur(100px);
 }
 
 .topRightIcons {
@@ -40,4 +41,15 @@
 
 #favorites-button:active {
     background-color: rgba(66, 66, 66, 0.4);
+}
+.logoSpot{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+}
+.logoSpot i{
+    font-size:1.5rem;
+    margin-top:.2rem;
 }

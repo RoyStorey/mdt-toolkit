@@ -3,7 +3,7 @@
   height: 40vh;
   max-width: 40vh;
   display: flex;
-  flex: 1 0 49%;
+  flex: 1 0 24%;
   border-radius: 1%;
   box-shadow: var(--boxShadowColor);
   overflow: hidden;

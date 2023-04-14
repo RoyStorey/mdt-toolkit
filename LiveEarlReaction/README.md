@@ -16,7 +16,7 @@ hostname = 'ip address front end is running on not localhost'
 
 
 python version 3.8 or higher required
-pip install django djangorestframework django-cors-headers pillow
+pip install django djangorestframework django-cors-headers pillow python-dotenv
 
 
 commands to run servers
