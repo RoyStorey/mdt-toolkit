@@ -30,7 +30,7 @@
 }
 
 .pill-tag:hover {
-  background-color: var(--prettyButtonHover)
+  background-color: var(--prettyButtonHover);
 }
 
 .pill-tag:active {
